@@ -28,7 +28,9 @@ Webscraping is used to get :
 
 ### **About the app :**
 
-This app first retrieves information about the data webscraped from the last time the app was opened.  The data is stored in Mongo database.  If the app is called locally, the local Mongo database will be obtained, or else, it will be fetched from Heroko Mongo (add-on).  If the button in the middle of the page is clicked, the information will be scraped afresh from the websites mentioned in ***About the data***
+This app first retrieves information about the data webscraped from the last time the app was opened.  The data is stored in Mongo database.  If the app is called locally, the local Mongo database will be obtained, or else, it will be fetched from Heroko Mongo (add-on).  If the button in the middle of the page is clicked, the information will be scraped afresh from the websites mentioned in ***About the data***.
+
+Technical features being used : 
 
 - HTML/CSS/Bootstrap
 - flask app (python)
