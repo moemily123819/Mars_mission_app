@@ -41,8 +41,9 @@ Technical features being used :
 
 
 
-### Deployment :**
+### Deployment :
 
 This app is deployed in Heroku and it can be checked out here : 
 
 [https://mars-mission-app.herokuapp.com](https://mars-mission-app.herokuapp.com/)
+
