@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type='css' href="static/css/style.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+
+    <div class="jumbotron text-center">
+        <h1 style="color:red;">Mission to Mars</h1>
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <!-- Latest Mars News -->
+    <div class="row" id="news">
+      <div class="col-md-7">
+          <h2 class="heading" style="color:red;"><b>Latest Mars News</b></h2>
+          <h4>{{mars_data.mars_news_hdline}}</h4>
+          <h5>{{mars_data.mars_news}}</h5>
+      </div>
+
+      <div class="col-md-5">
+          <h3 class="jumps" style="color:red;"><b>Jump to :</b></h3>
+          <ul>
+              <li><a href="#news">Mars Latest News</a></li>
+              <li><a href="#image">Mars Featured Image</a></li>
+              <li><a href="#weather">Mars Current Weather</a></li>
+              <li><a href="#facts">Mars Facts</a></li>
+              <li><a href="#hemispheres">Mars Hemispheres</a></li>
+            </ul>      
+       </div>
+
+    </div>
+
+    <hr>
+    <div class="row" id="image">
+      <div class="col-md-7">
+        <h2 style="color:red;"><b>Featured Mars Image</b></h2>
+        <img src="{{mars_data.mars_featured_image}}" alt="Mars featured images" width="550" height="450"></img>
+      </div>
+
+      <div class="col-md-5" id="weather">
+        <h2 style="color:red;"><b>Current Mars Weather</b></h2>
+        <h4>{{mars_data.mars_weather}}</h4>
+
+        <h2 id="facts" style="color:red;"><b>Mars Facts</b></h2>
+          {{mars_data.mars_facts|safe}}
+
+      </div>
+    </div>
+     <hr>
+
+    <div class="row" id="hemispheres">
+        <h2 style="color:red;"><b>Mars Hemispheres</b></h2>
+          <!-- write a for loop that lists out your data and accesses the values using dot notation. -->
+              {% for data in mars_data.mars_hemispheres %}
+              <div class="col-md-6">
+                <img src="{{data.img_url}}" width="500" height="500" alt={{data.title}}>
+                <p><b>{{data.title}}</b></p>
+            </div>
+            {% endfor %}
+      </div><!--row-->
+  
+  </div><!--container-->
+
+
+</body>
+
+</html>
+
